@@ -10,3 +10,74 @@ p {
 * {
   font-family: "Koulen", cursive;
 }
+.cardp {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: solid blue 2px;
+}
+
+//  grid{
+//   // margin: 0px;
+//   // padding: 0px;
+//   // box-sizing: border-box;
+//   // -webkit-font-smoothing: antialiased;
+
+//   // transition: max-height 1s ease-out 0s;
+//   // overflow: hidden;
+//   // column-gap: 10px;
+//   // grid-template-columns: 191.664px 191.664px 191.672px 191.664px 191.664px 191.672px;
+// }
+
+// box-sizing: border-box;
+// -webkit-font-smoothing: antialiased;
+// padding: 0px;
+// background-color: rgb(255, 255, 255);
+
+// width: 1500px;
+// margin: 60px auto;
+// display: flex;
+// border: solid white 2px;
+// flex-direction: row;
+
+.card {
+  border: solid red 2px;
+  display: flex;
+  // justify-content: center;
+  flex-direction: row;
+  height: 454px;
+  width: 392px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  // transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+  transition: all 0.2s linear 0s;
+  // overflow: hidden;
+  // object-position: 50% 0%;
+  display: block;
+  // margin: 0px;
+  // object-fit: cover;
+  // padding: 0px;
+  // width: 191.664px;
+  // height: 210px;
+  img {
+    border: solid #982d2b 2px;
+  }
+}
+
+// margin: 0px;
+//   padding: 16px 24px 17px 20px;
+//   box-sizing: border-box;
+//   -webkit-font-smoothing: antialiased;
+//   background: rgb(21, 21, 21) none repeat scroll 0% 0% / auto padding-box
+//     border-box;
+//   border: 0px none rgb(230, 36, 41);
+//   color: rgb(230, 36, 41);
+//   height: 145px;
+//   position: relative;
+//   vertical-align: middle;
+//   z-index: 30;
+//   transition: color 0.3s ease 0s;
+//   overflow: hidden;
+//   line-height: 16px;
