@@ -3,6 +3,7 @@ import axios from "axios";
 
 // import { Link } from "react-router-dom";
 
+import "./scss/comics.scss";
 const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -22,17 +23,17 @@ const Comics = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <div>
-        <h1>Retrouvez vos Héros Marvel</h1>
+      <div className="cardp">
         {data.results.map((item, index) => {
           // console.log(offer._id);
           return (
             // <Link to={`/offer/${offer._id}`} key={offer._id}>
             <main>
-              <div key={index} className="card">
+              <div className="grid"></div>
+              <div key={index} className="cardcomics">
                 <h2>{item.title}</h2>
                 <img
-                  className="portrait"
+                  className="comics"
                   style={{ height: 300 }}
                   src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
                   alt={"heros"}

@@ -1,0 +1,30 @@
+.cardcomics {
+  border: solid #982d2b 2px;
+  background-color: #982d2b;
+  border-radius: 10px;
+  display: flex;
+
+  flex-direction: row;
+  height: 354px;
+  width: 220px;
+  // box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  // transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+  transition: all 0.2s linear 0s;
+  // overflow: hidden;
+
+  display: block;
+  margin-bottom: 240px;
+
+  object-fit: cover;
+
+  img {
+    border: solid #982d2b 10px;
+    border-radius: 10px;
+  }
+  h2 {
+    font-size: larger;
+    margin-bottom: 20px;
+    font-family: "Koulen", cursive;
+  }
+}

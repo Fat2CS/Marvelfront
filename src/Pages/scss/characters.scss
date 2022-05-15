@@ -6,66 +6,70 @@ h1,
 h2,
 p {
   color: white;
+  font-family: "Koulen", cursive;
 }
 * {
   font-family: "Koulen", cursive;
 }
 .cardp {
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: solid blue 2px;
+  // border: solid blue 2px;
+  margin-right: 5%;
 }
 
-//  grid{
-//   // margin: 0px;
-//   // padding: 0px;
-//   // box-sizing: border-box;
-//   // -webkit-font-smoothing: antialiased;
+.grid {
+  flex-wrap: wrap;
+}
+grid {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 
-//   // transition: max-height 1s ease-out 0s;
-//   // overflow: hidden;
-//   // column-gap: 10px;
-//   // grid-template-columns: 191.664px 191.664px 191.672px 191.664px 191.664px 191.672px;
-// }
-
-// box-sizing: border-box;
-// -webkit-font-smoothing: antialiased;
-// padding: 0px;
-// background-color: rgb(255, 255, 255);
-
-// width: 1500px;
-// margin: 60px auto;
-// display: flex;
-// border: solid white 2px;
-// flex-direction: row;
+  transition: max-height 1s ease-out 0s;
+  overflow: hidden;
+  column-gap: 10px;
+}
 
 .card {
-  border: solid red 2px;
+  border: solid #982d2b 2px;
+  background-color: #982d2b;
+  border-radius: 10px;
   display: flex;
-  // justify-content: center;
+
   flex-direction: row;
-  height: 454px;
-  width: 392px;
-  box-sizing: border-box;
+  height: 354px;
+  width: 220px;
+  // box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   // transform: matrix(1.05, 0, 0, 1.05, 0, 0);
   transition: all 0.2s linear 0s;
   // overflow: hidden;
-  // object-position: 50% 0%;
+
   display: block;
-  // margin: 0px;
-  // object-fit: cover;
-  // padding: 0px;
-  // width: 191.664px;
-  // height: 210px;
+  margin-bottom: 150px;
+
+  object-fit: cover;
+
   img {
-    border: solid #982d2b 2px;
+    border: solid #982d2b 10px;
+    border-radius: 10px;
+  }
+  h2 {
+    font-size: larger;
+    margin-bottom: 20px;
+    font-family: "Koulen", cursive;
   }
 }
-
+//DESCRIPTION
+.description {
+  width: 300px;
+  text-align: justify;
+  margin-top: 20px;
+}
 // margin: 0px;
 //   padding: 16px 24px 17px 20px;
 //   box-sizing: border-box;

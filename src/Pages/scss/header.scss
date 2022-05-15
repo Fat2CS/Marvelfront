@@ -1,4 +1,5 @@
 .menu {
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
   button {
@@ -7,5 +8,35 @@
     height: 80px;
     width: 150px;
     font-size: larger;
+    border-radius: 10px;
   }
+}
+.research {
+  // width: 100%;
+  margin-top: -10px;
+  background-color: #982d2b;
+
+  border: 4px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 20px 10px;
+  width: 250px;
+
+  input {
+    focus::-webkit-input-placeholder {
+      // color: transparent;
+    }
+    width: 230px;
+    // border: #982d2b solid 3px;
+    // border: #982d2b;
+
+    // margin-right: 20px;
+  }
+}
+.iconresearch {
+  // padding-top: 20px;
+  margin-right: 50px;
+
+  position: absolute;
+  font-size: 15px;
+  margin-top: 20px;
 }
