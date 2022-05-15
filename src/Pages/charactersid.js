@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import { useParams } from "react-router-dom";
-import "./scss/characters.scss";
-//
+import "./scss/charactersid.scss";
 const Charactersid = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(0);
+  // const [page, setPage] = useState(0);
   const { id } = useParams();
   console.log(id.CharactersID);
   // const [limit, setLimit] = useState(Number);
@@ -15,51 +14,54 @@ const Charactersid = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvelprocess.herokuapp.com/characters/character${id.CharactersID}`
+        `https://marvelprocess.herokuapp.com/character/${id}`
       );
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
-  }, [id.CharactersID]);
+  }, [id]);
   // console.log(data.id);
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
     <>
-      <button onClick={() => setPage(page - 1)}>Page précédente</button>
-      <button onClick={() => setPage(page + 1)}>Page suivante</button>
-
       <div className="cardp">
-        <div className="lenomduhéros">
-          <h1>{data.name[0]}</h1>
-          console.log(data.name)
-        </div>
-        {/* <h1>Retrouvez vos Héros Marvel</h1> */}
-        {data.results.map((item, index) => {
-          console.log();
-          return (
-            <section>
-              <div div className="grid">
-                <div key={index} className="card">
-                  <h2>{item.name}</h2>
+        <section>
+          <div div className="grid">
+            <div key={data._id} className="card">
+              <h2>{data.name}</h2>
+
+              <img
+                className="portrait"
+                style={{
+                  height: "500px",
+                  imageresolution: "from-image 300dpi"
+                }}
+                src={`${data.thumbnail.path}/standard_large.${data.thumbnail.extension}`}
+                alt={"heros"}
+              />
+
+              <p className="description">{data.description}</p>
+            </div>
+            <div className="comicslist"></div>
+          </div>
+          <div>
+            {/* {data.comics.map((comic) => {
+              return (
+                <div>
+                  <h3>{comic.tittle}</h3>
 
                   <img
-                    className="portrait"
-                    style={{ height: 300 }}
-                    src={`${item.thumbnail.path}/standard_large.${item._id.thumbnail.extension}`}
-                    alt={"heros"}
+                    src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
+                    alt={data.name}
                   />
-                  <div></div>
-
-                  <p className="description">{item.description}</p>
                 </div>
-              </div>
-            </section>
-            //
-          );
-        })}
+              );
+            })} */}
+          </div>
+        </section>
       </div>
     </>
   );

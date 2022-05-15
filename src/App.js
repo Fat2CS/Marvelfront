@@ -20,8 +20,6 @@ library.add(faMagnifyingGlass);
 // pages
 
 function App() {
-  const [nameSearch, setnameSearch] = useState("");
-
   return (
     <div className="App">
       {/* <h1> Bonjour</h1> */}
@@ -33,14 +31,14 @@ function App() {
           <Route
             path="/"
             element={<Home />}
-            nameSearch={nameSearch}
-            setnameSearch={setnameSearch}
+            // nameSearch={nameSearch}
+            // setnameSearch={setnameSearch}
           />
           <Route path="/characters" element={<Characters />} />
           {/* {/* <Route path="/" element={<Offer />} /> */}
           <Route path="/comics" element={<Comics />} />
-          <Route path="/comics/characterId" element={<Favorites />} />
-          <Route path="/characterId" element={<Charactersid />} />
+          <Route path="/comics/character/:id" element={<Favorites />} />
+          <Route path="/character/:id" element={<Charactersid />} />
         </Routes>
       </Router>
     </div>

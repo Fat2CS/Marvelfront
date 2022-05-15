@@ -5,31 +5,41 @@
   button {
     margin-top: 20px;
     border: #982d2b solid 4px;
-    height: 80px;
-    width: 150px;
+    height: auto;
+    width: 100%;
     font-size: larger;
     border-radius: 10px;
+    margin: auto;
+    padding: 1em;
+    cursor: pointer;
+  }
+  button:hover {
+    margin-top: 20px;
+    border: #540807 solid 4px;
+    height: auto;
+    width: 100%;
+    font-size: larger;
+    border-radius: 10px;
+    margin: auto;
+    padding: 1em;
+    cursor: pointer;
   }
 }
 .research {
   // width: 100%;
   margin-top: -10px;
   background-color: #982d2b;
-
+  display: block;
+  margin: auto;
   border: 4px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px 10px;
-  width: 250px;
+  width: 50%;
 
   input {
-    focus::-webkit-input-placeholder {
-      // color: transparent;
-    }
-    width: 230px;
-    // border: #982d2b solid 3px;
-    // border: #982d2b;
-
-    // margin-right: 20px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0px;
   }
 }
 .iconresearch {
@@ -39,4 +49,16 @@
   position: absolute;
   font-size: 15px;
   margin-top: 20px;
+}
+
+.text-color {
+  color: #fff;
+  font-size: 20px;
+  margin: auto;
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  border-bottom: dotted #982d2b;
+  font-family: "Koulen", cursive;
+  width: 50%;
 }

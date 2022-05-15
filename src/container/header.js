@@ -1,15 +1,41 @@
 import logo from "../img/marvel.jpeg";
 
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../Pages/scss/header.scss";
+import { useState, useEffect } from "react";
 
 const Header = () => {
-  //   const tab = [];
-  //   for( let i=0; i< )
+  const [comics, setComics] = useState([]);
+  const [text, setText] = useState("");
+  const [suggestions, setsuggestions] = useState([]);
 
+  useEffect(() => {
+    const loadComics = async () => {
+      const response = await axios.get(
+        `https://marvelprocess.herokuapp.com/characters`
+      );
+      setComics(response.data);
+    };
+    loadComics();
+  }, []);
+
+  const onChangeHandler = (text) => {
+    let matches = [];
+    if (text.length > 0) {
+      matches = comics.results.filter((com) => {
+        const regex = new RegExp(`${text}`, "gi");
+        // return comic.name.matche(regex)
+        return com.name.match(regex);
+      });
+    }
+    console.log("matches", matches);
+    setsuggestions(matches);
+    setText(text);
+  };
   return (
     <header>
       <div className="logo">
@@ -19,12 +45,23 @@ const Header = () => {
           style={{ height: "530px", width: "100%", objectFit: "cover" }}
         />
       </div>
-      {/* <div className="iconresearch">
-        <FontAwesomeIcon icon="magnifying-glass" />
-      </div> */}
+
       <div className="research">
-        <input type="text" placeholder="research hero" />
+        <input
+          type="text"
+          name="search"
+          placeholder="Search Hero ..."
+          onChange={(e) => onChangeHandler(e.target.value)}
+          value={text}
+        />
       </div>
+      {suggestions &&
+        suggestions.map((suggestion, i) => (
+          <div className="text-color" key={i}>
+            {suggestion.name}
+          </div>
+        ))}
+      {/* <div className="text-color">{text}</div> */}
       <div className="menu">
         {/* <link to="/">
           <button>Home</button>
@@ -45,5 +82,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;

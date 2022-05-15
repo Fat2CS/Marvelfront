@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import { ReactDOM } from "react";
+import { ReactDOM } from "react";
 // import { ReactPaginate } from "react-paginate";
 
 import { Link, useParams } from "react-router-dom";
@@ -12,18 +12,11 @@ const Characters = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
-  // const [currentPage, setCurrentPage] = useState(0);
+  // const [Page, setPage] = useState();
+  // const [currentPage, setCurrentPage] = useState();
+  // const [PageSize, setPageSize] = useState(0);
   const { _id } = useParams();
   // const [limit, setLimit] = useState(Number);
-
-  // function handlePageClick({ selected: selectedPage }) {
-  //   console.log("selectegPage", selectedPage);
-  //   setCurrentPage(selectedPage);
-  // }
-  // const offset = currentPage * Per_page;
-  // console.log("offset", offset);
-
-  // const pageCount = Math.ceil(data.length / Per_page);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,15 +30,6 @@ const Characters = () => {
     fetchData();
   }, [_id]);
 
-  // const currentPageData = data;
-  // .slice(offset, offset + Per_page)
-  // .map((res, index) => (
-  //   <img
-  //     key={index}
-  //     src={`${index.thumbnail.path}/standard_large.${index.thumbnail.extension}`}
-  //   />
-  // ));
-
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
@@ -57,7 +41,7 @@ const Characters = () => {
           return (
             <section>
               <div div className="grid">
-                <Link to={`/character.${item._id}`} key={item._id}>
+                <Link to={`/character/${item._id}`} key={item._id}>
                   <div key={index} className="card">
                     <h2>{item.name}</h2>
 
@@ -71,13 +55,30 @@ const Characters = () => {
                     <p className="description">{item.description}</p>
                   </div>
                 </Link>
+
+                <div>
+                  <Link to={`/comics/character/${item.id}`}>
+                    <button>comics Characters</button>
+                  </Link>
+                </div>
               </div>
 
               <div>
-                {" "}
-                {/* return(
-                <div className="App">{currentPageData}</div>){currentPageData}
-                <ReactPaginate
+                {/* <table>
+                  data={data}
+                  pagination=
+                  {{
+                    total: 100,
+                    current: Page,
+                    PageSize: PageSize,
+                    OnChange: (Page, PageSize) => {
+                      setPage(Page);
+                      setPageSize(PageSize);
+                    }
+                  }}
+                </table>{" "} */}
+                {/* <div className="App">{currentPageData}</div>){currentPageData} */}
+                {/* <ReactPaginate
                   breakLabel={"<< Previous"}
                   nextLabel={"Next >>"}
                   pageCount={pageCount}
@@ -85,8 +86,8 @@ const Characters = () => {
                   containerClassName={"pagination"}
                   previousLinkClassName={"pagination_link"}
                   disableClassName={"pagination_link--disabled"}
-                  renderOnZeroPageCount={"pagination_link--active"} */}
-                {/* /> */}
+                  renderOnZeroPageCount={"pagination_link--active"}
+                /> */}
               </div>
             </section>
             //
