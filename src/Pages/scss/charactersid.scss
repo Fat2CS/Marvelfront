@@ -6,3 +6,11 @@ h3 {
   font-size: 30px;
   color: aquamarine;
 }
+.block {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .cardp {
+  }
+}

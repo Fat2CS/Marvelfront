@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { ReactDOM } from "react";
+
 // import { ReactPaginate } from "react-paginate";
 
 import { Link, useParams } from "react-router-dom";
@@ -12,11 +12,9 @@ const Characters = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
-  // const [Page, setPage] = useState();
-  // const [currentPage, setCurrentPage] = useState();
+
   // const [PageSize, setPageSize] = useState(0);
   const { _id } = useParams();
-  // const [limit, setLimit] = useState(Number);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,12 +53,6 @@ const Characters = () => {
                     <p className="description">{item.description}</p>
                   </div>
                 </Link>
-
-                <div>
-                  <Link to={`/comics/character/${item.id}`}>
-                    <button>comics Characters</button>
-                  </Link>
-                </div>
               </div>
 
               <div>

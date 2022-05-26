@@ -27,8 +27,8 @@ const Charactersid = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <div className="cardp">
-        <section>
+      <div className="block">
+        <div className="cardp">
           <div div className="grid">
             <div key={data._id} className="card">
               <h2>{data.name}</h2>
@@ -47,8 +47,9 @@ const Charactersid = () => {
             </div>
             <div className="comicslist"></div>
           </div>
-          <div>
-            {/* {data.comics.map((comic) => {
+        </div>
+        <div>
+          {/* {data.comics.map((comic) => {
               return (
                 <div>
                   <h3>{comic.tittle}</h3>
@@ -60,8 +61,7 @@ const Charactersid = () => {
                 </div>
               );
             })} */}
-          </div>
-        </section>
+        </div>
       </div>
     </>
   );
