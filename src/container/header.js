@@ -20,7 +20,9 @@ const Header = () => {
   useEffect(() => {
     const loadComics = async () => {
       const response = await axios.get(
-        `https://marvelprocess.herokuapp.com/characters${limit}${skip}${name}`
+        `http://localhost:4000/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
+
+        // `https://marvelprocess.herokuapp.com/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
       );
       setComics(response.data);
       setPage(response.data);

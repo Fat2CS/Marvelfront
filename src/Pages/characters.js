@@ -18,9 +18,9 @@ const Characters = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `https://marvelprocess.herokuapp.com/characters`
-      );
+      const response =
+        await axios.get // `http://localhost:4001/characters?apiKey=t7a7NjbAUHREgQNr`
+        `https://marvelprocess.herokuapp.com/characters`;
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
