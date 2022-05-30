@@ -8,7 +8,7 @@ import Characters from "./Pages/characters";
 import Header from "./container/header";
 import Comics from "./Pages/comics";
 import Favorites from "./Pages/favorites";
-// import Comicscharacters from "./Pages/comicscharacters";
+import Comicscharacters from "./Pages/comicscharacters";
 import Home from "./Pages/home";
 import Charactersid from "./Pages/charactersid";
 import { useState } from "react";
@@ -37,7 +37,7 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           {/* {/* <Route path="/" element={<Offer />} /> */}
           <Route path="/comics" element={<Comics />} />
-          <Route path="/comics/character/:id" element={<Favorites />} />
+          <Route path="/comics/character/:id" element={<Comicscharacters />} />
           <Route path="/character/:id" element={<Charactersid />} />
         </Routes>
       </Router>

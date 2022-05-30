@@ -14,8 +14,8 @@ const Charactersid = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        // `http://localhost:4001/character/${id}`
-        `https://marvelprocess.herokuapp.com/character/${id}`
+        `http://localhost:4001/character/${id}`
+        // `https://marvelprocess.herokuapp.com/character/${id}`
       );
       console.log(response.data);
       setData(response.data);
@@ -23,7 +23,7 @@ const Charactersid = () => {
     };
     fetchData();
   }, [id]);
-  // console.log(data.id);
+
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
@@ -49,20 +49,20 @@ const Charactersid = () => {
             <div className="comicslist"></div>
           </div>
         </div>
-        <div>
-          {/* {data.comics.map((comic) => {
-              return (
-                <div>
-                  <h3>{comic.tittle}</h3>
+        {/* <div>
+          {data.comics.map((comic) => {
+            return (
+              <div>
+                <h3>{comic.tittle}</h3>
 
-                  <img
-                    src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
-                    alt={data.name}
-                  />
-                </div>
-              );
-            })} */}
-        </div>
+                <img
+                  src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
+                  alt={data.name}
+                />
+              </div>
+            );
+          })}
+        </div> */}
       </div>
     </>
   );

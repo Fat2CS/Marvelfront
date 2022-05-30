@@ -12,21 +12,27 @@ const Characters = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
+  let page = 1;
+  // const [page, setPage] = useState(1);
+  const [skip, setSkip] = useState(0);
+  const [name, setName] = useState("");
+  const [limit] = useState(20);
 
   // const [PageSize, setPageSize] = useState(0);
   const { _id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const response =
-        await axios.get // `http://localhost:4001/characters?apiKey=t7a7NjbAUHREgQNr`
-        `https://marvelprocess.herokuapp.com/characters`;
+      const response = await axios.get(
+        `http://localhost:4001/characters?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
+      );
+      // `https://marvelprocess.herokuapp.com/characters?limit=10&skip=10&name=ve`;
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
-  }, [_id]);
+  }, [skip]);
 
   return isLoading === true ? (
     <div> En cours de chargement </div>
@@ -86,7 +92,12 @@ const Characters = () => {
           );
         })}
       </div>
-      //{" "}
+      {/* //pagination  */}
+      <div>
+        <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
+
+        <button onClick={() => setSkip(skip + limit)}>Page suivante</button>
+      </div>
     </>
   );
 };

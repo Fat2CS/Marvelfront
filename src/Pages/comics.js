@@ -7,18 +7,25 @@ import "./scss/comics.scss";
 const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
+  let page = 1;
+  // const [page, setPage] = useState(1);
+  const [skip, setSkip] = useState(0);
+  const [name, setName] = useState("");
+  const [limit, setLimit] = useState(20);
+  // const pageOn = "Comics";
+  // console.log = pageOn;
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvelprocess.herokuapp.com/comics`
+        `http://localhost:4001/comics?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
+        // `https://marvelprocess.herokuapp.com/comics?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
       );
       console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [skip]);
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
@@ -44,6 +51,11 @@ const Comics = () => {
             // </Link>
           );
         })}
+      </div>
+      <div>
+        <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
+
+        <button onClick={() => setSkip(skip + limit)}>Page suivante</button>
       </div>
 
       {/* return (

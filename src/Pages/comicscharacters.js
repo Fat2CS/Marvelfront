@@ -1,35 +1,40 @@
-// import { useParams } from "react-router-dom";
 // const { characterID } = useParams;
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import axios from "axios";
 
 // import { Link } from "react-router-dom";
 import "./scss/characters.scss";
 //
+
 const Comicscharacters = () => {
+  const { id } = useParams();
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(0);
-  // const [limit, setLimit] = useState(Number);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        `https://marvelprocess.herokuapp.com/comicscharacters`
-      );
-      console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
+    const comicsCharacters = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:4001/comics/character/${id}`
+          // `https://marvelprocess.herokuapp.com/character/${id}`
+        );
+        console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+
+        comicsCharacters();
+      } catch (error) {
+        console.log(error.message);
+      }
     };
-    fetchData();
-  }, [page]);
+  }, [id]);
+
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
     <>
-      <button onClick={() => setPage(page - 1)}>Page précédente</button>
-      <button onClick={() => setPage(page + 1)}>Page suivante</button>
-
       <div className="cardp">
         {/* <h1>Retrouvez vos Héros Marvel</h1> */}
         {data.results.map((item, index) => {
@@ -39,7 +44,7 @@ const Comicscharacters = () => {
               <div div className="grid">
                 {/* <Link to={`/comicscharacters${item.comics._id}`} key={item._id}> */}
                 <div key={index} className="card">
-                  <h2>{item.comics.id}</h2>
+                  <h2>{item.title}</h2>
 
                   <img
                     className="portrait"

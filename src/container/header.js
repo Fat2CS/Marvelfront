@@ -12,27 +12,19 @@ const Header = () => {
   const [comics, setComics] = useState([]);
   const [text, setText] = useState("");
   const [suggestions, setsuggestions] = useState([]);
-  const [Page, setPage] = useState(1);
-  const [skip, setSkip] = useState(0);
-  const [name, setName] = useState("");
-  const [limit, setLimit] = useState(Number);
 
   useEffect(() => {
     const loadComics = async () => {
       const response = await axios.get(
-        `http://localhost:4000/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
+        `http://localhost:4001/characters?apiKey=t7a7NjbAUHREgQNr`
 
         // `https://marvelprocess.herokuapp.com/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
       );
       setComics(response.data);
-      setPage(response.data);
-      setSkip(response.data);
-      setLimit(response.data);
     };
     loadComics();
   }, []);
 
-  const handlePage = () => {};
   const onChangeHandler = (text) => {
     let matches = [];
     if (text.length > 0) {
@@ -71,16 +63,6 @@ const Header = () => {
             {suggestion.name}
           </div>
         ))}
-      <div>
-        <button
-          onClick={() => {
-            handlePage;
-          }}
-        >
-          Page precedente
-        </button>
-        <button>Page suivante</button>
-      </div>
 
       {/* <div className="text-color">{text}</div> */}
       <div className="menu">
