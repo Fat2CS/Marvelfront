@@ -6,25 +6,25 @@ import axios from "axios";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../Pages/scss/header.scss";
-import { useState, useEffect } from "react";
-// import { useState } from "react";
+// import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [comics, setComics] = useState([]);
   const [text, setText] = useState("");
   const [suggestions, setsuggestions] = useState([]);
 
-  useEffect(() => {
-    const loadComics = async () => {
-      const response = await axios.get(
-        `http://localhost:4001/characters`
+  // useEffect(() => {
+  //   const loadComics = async () => {
+  //     const response = await axios.get(
+  //       `http://localhost:4001/characters`
 
-        // `https://marvelprocess.herokuapp.com/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
-      );
-      setComics(response.data);
-    };
-    loadComics();
-  }, []);
+  //       // `https://marvelprocess.herokuapp.com/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
+  //     );
+  //     setComics(response.data);
+  //   };
+  //   loadComics();
+  // }, []);
 
   const onChangeHandler = (text) => {
     let matches = [];
@@ -49,15 +49,6 @@ const Header = () => {
         />
       </div>
 
-      <div className="research">
-        <input
-          type="text"
-          name="search"
-          placeholder="Search Hero ..."
-          onChange={(e) => onChangeHandler(e.target.value)}
-          value={text}
-        />
-      </div>
       {suggestions &&
         suggestions.map((suggestion, i) => (
           <div className="text-color" key={i}>

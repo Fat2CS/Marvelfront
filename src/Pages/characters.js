@@ -19,16 +19,6 @@ const Characters = () => {
   const [limit] = useState(20);
   const [suggestions, setsuggestions] = useState([]);
 
-  const onChangeHandler = (name) => {
-    let matches = [];
-    if (name.length > 0) {
-      matches = name.results.filter((com) => {
-        const regex = new RegExp(`${name}`, "gi");
-        return com.name.match(regex);
-      });
-    }
-  };
-
   // const [PageSize, setPageSize] = useState(0);
   const { _id } = useParams();
 
@@ -45,6 +35,16 @@ const Characters = () => {
     fetchData();
   }, [skip]);
 
+  const onChangeHandler = (event) => {
+    let value = event.target.value;
+    value.lenght > 2 && setName(value);
+    // let matches = [];
+    // if (name.length > 0) {
+    //   matches = name.results.filter((com) => {
+    //     const regex = new RegExp(`${name}`, "gi");
+    // return com.setName.match(regex);
+  };
+
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
@@ -54,16 +54,33 @@ const Characters = () => {
           type="text"
           name="search"
           placeholder="Search Hero ..."
-          onChange={(e) => onChangeHandler(e.target.value)}
-          value={text}
+          onChange={onChangeHandler}
+          // value={name}
         />
       </div>
+
+      <div className="search_results">
+        {/* //onrecupere la valeur et on la map sur notre liste  */}
+        {data
+          .filter((val) => {
+            return val.name.toLowerCase().includes(name.toLowerCase); // pour plus de précison on rajoute tolowercase
+          })
+          .map((val) => {
+            return (
+              <div className="search_result" key={val.id}>
+                {val.name}
+              </div>
+            );
+          })}
+      </div>
+
+      {/* </div>
       {suggestions &&
         suggestions.map((suggestion, i) => (
           <div className="text-color" key={i}>
             {suggestion.name}
           </div>
-        ))}
+        ))} */}
 
       <div className="cardp">
         {/* <h1>Retrouvez vos Héros Marvel</h1> */}
@@ -128,5 +145,4 @@ const Characters = () => {
     </>
   );
 };
-
 export default Characters;
