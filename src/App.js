@@ -1,5 +1,5 @@
 import "./App.css";
-
+import Cookies from "js-cookie";
 // import "https://fonts.googleapis.com/css2?family=Koulen&display=swap";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,6 +12,7 @@ import Comicscharacters from "./Pages/comicscharacters";
 import Home from "./Pages/home";
 import Charactersid from "./Pages/charactersid";
 import { useState } from "react";
+import Signup from "./Pages/signup";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -20,11 +21,18 @@ library.add(faMagnifyingGlass);
 // pages
 
 function App() {
+  const handleToken = (token) => {
+    if (token) {
+      Cookies.setItem("userToken", token, { expires: 7 });
+    } else {
+      Cookies.remove("userToken");
+    }
+  };
   return (
     <div className="App">
       {/* <h1> Bonjour</h1> */}
       <Router>
-        <Header />
+        <Header handleToken={handleToken} />
 
         {/* <Header token={token} setUser={setUser} /> */}
         <Routes>
@@ -37,8 +45,14 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           {/* {/* <Route path="/" element={<Offer />} /> */}
           <Route path="/comics" element={<Comics />} />
-          <Route path="/comics/character/:id" element={<Comicscharacters />} />
+          <Route path="/comics/:id" element={<Comicscharacters />} />
           <Route path="/character/:id" element={<Charactersid />} />
+
+          <Route
+            path="/signup"
+            element={<Signup handleToken={handleToken} />}
+          />
+          <Route path="/login" element={<login handleToken={handleToken} />} />
         </Routes>
       </Router>
     </div>

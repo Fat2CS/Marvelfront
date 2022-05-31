@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./scss/charactersid.scss";
 const Charactersid = () => {
   const [data, setData] = useState();
@@ -48,21 +48,10 @@ const Charactersid = () => {
             </div>
             <div className="comicslist"></div>
           </div>
+          <Link to={`/comics/${data._id}`}>
+            <button>Pour connaitre les comics de ton hero</button>
+          </Link>
         </div>
-        {/* <div>
-          {data.comics.map((comic) => {
-            return (
-              <div>
-                <h3>{comic.tittle}</h3>
-
-                <img
-                  src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
-                  alt={data.name}
-                />
-              </div>
-            );
-          })}
-        </div> */}
       </div>
     </>
   );

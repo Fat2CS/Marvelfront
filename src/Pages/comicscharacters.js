@@ -17,28 +17,42 @@ const Comicscharacters = () => {
     const comicsCharacters = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4001/comics/character/${id}`
+          `http://localhost:4001/comics/${id}`
           // `https://marvelprocess.herokuapp.com/character/${id}`
         );
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
-
-        comicsCharacters();
       } catch (error) {
         console.log(error.message);
       }
     };
+    comicsCharacters();
   }, [id]);
 
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
     <>
+      <div>
+        <h1>comics </h1>
+      </div>
+      <div>
+        <h1>{data.name}</h1>
+        console.log(data)
+        <img
+          className="portrait"
+          style={{ height: 200 }}
+          src={data.thumbnail.path + "." + data.thumbnail.extension}
+          alt={"heros"}
+        />
+      </div>
+
       <div className="cardp">
         {/* <h1>Retrouvez vos Héros Marvel</h1> */}
-        {data.results.map((item, index) => {
-          console.log(item._id);
+        {data.comics.map((item, index) => {
+          console.log(item.name);
+
           return (
             <section>
               <div div className="grid">
@@ -55,7 +69,6 @@ const Comicscharacters = () => {
                 </div>
               </div>
             </section>
-            //
           );
         })}
       </div>

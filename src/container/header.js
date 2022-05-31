@@ -7,6 +7,7 @@ import axios from "axios";
 
 import "../Pages/scss/header.scss";
 import { useState, useEffect } from "react";
+// import { useState } from "react";
 
 const Header = () => {
   const [comics, setComics] = useState([]);
