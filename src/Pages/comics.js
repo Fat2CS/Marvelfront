@@ -17,7 +17,7 @@ const Comics = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:4001/comics?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
+        `http://localhost:4001/comics?limit=${limit}&skip=${skip}`
         // `https://marvelprocess.herokuapp.com/comics?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
       );
       console.log(response.data);

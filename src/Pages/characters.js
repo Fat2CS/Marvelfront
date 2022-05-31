@@ -17,6 +17,17 @@ const Characters = () => {
   const [skip, setSkip] = useState(0);
   const [name, setName] = useState("");
   const [limit] = useState(20);
+  const [suggestions, setsuggestions] = useState([]);
+
+  const onChangeHandler = (name) => {
+    let matches = [];
+    if (name.length > 0) {
+      matches = name.results.filter((com) => {
+        const regex = new RegExp(`${name}`, "gi");
+        return com.name.match(regex);
+      });
+    }
+  };
 
   // const [PageSize, setPageSize] = useState(0);
   const { _id } = useParams();
@@ -24,7 +35,7 @@ const Characters = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:4001/characters?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
+        `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
       );
       // `https://marvelprocess.herokuapp.com/characters?limit=10&skip=10&name=ve`;
       console.log(response.data);
@@ -38,6 +49,22 @@ const Characters = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
+      <div className="research">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search Hero ..."
+          onChange={(e) => onChangeHandler(e.target.value)}
+          value={text}
+        />
+      </div>
+      {suggestions &&
+        suggestions.map((suggestion, i) => (
+          <div className="text-color" key={i}>
+            {suggestion.name}
+          </div>
+        ))}
+
       <div className="cardp">
         {/* <h1>Retrouvez vos Héros Marvel</h1> */}
         {data.results.map((item, index) => {

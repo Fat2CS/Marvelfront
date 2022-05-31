@@ -17,7 +17,7 @@ const Header = () => {
   useEffect(() => {
     const loadComics = async () => {
       const response = await axios.get(
-        `http://localhost:4001/characters?apiKey=t7a7NjbAUHREgQNr`
+        `http://localhost:4001/characters`
 
         // `https://marvelprocess.herokuapp.com/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
       );
