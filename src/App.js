@@ -13,6 +13,7 @@ import Home from "./Pages/home";
 import Charactersid from "./Pages/charactersid";
 import { useState } from "react";
 import Signup from "./Pages/signup";
+import Login from "./Pages/login";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -23,7 +24,7 @@ library.add(faMagnifyingGlass);
 function App() {
   const handleToken = (token) => {
     if (token) {
-      Cookies.setItem("userToken", token, { expires: 7 });
+      Cookies.set("userToken", token, { expires: 7 });
     } else {
       Cookies.remove("userToken");
     }
@@ -52,7 +53,7 @@ function App() {
             path="/signup"
             element={<Signup handleToken={handleToken} />}
           />
-          <Route path="/login" element={<login handleToken={handleToken} />} />
+          <Route path="/login" element={<Login handleToken={handleToken} />} />
         </Routes>
       </Router>
     </div>

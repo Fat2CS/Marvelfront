@@ -14,8 +14,8 @@ const Charactersid = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:4001/character/${id}`
-        // `https://marvelprocess.herokuapp.com/character/${id}`
+        // `http://localhost:4001/character/${id}`
+        `https://marvelprocess.herokuapp.com/character/${id}`
       );
       console.log(response.data);
       setData(response.data);

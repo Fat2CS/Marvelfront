@@ -17,8 +17,8 @@ const Comicscharacters = () => {
     const comicsCharacters = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4001/comics/${id}`
-          // `https://marvelprocess.herokuapp.com/character/${id}`
+          // `http://localhost:4001/comics/${id}`
+          `https://marvelprocess.herokuapp.com/comics/${id}`
         );
         console.log(response.data);
         setData(response.data);

@@ -1,21 +1,23 @@
 import "./scss/signup.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
 const Signup = ({ handleToken }) => {
-  const [data, setData] = useState();
-  const [isloading, setIsLoading] = useState(true);
+  // const [isloading, setIsLoading] = useState(true);
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   const handlesubmit = async (event) => {
     event.preventDefault();
 
     try {
       const response = await axios.post(
-        `http://localhost:4001/signup`,
+        // `http://localhost:4001/signup`
+        `https://marvelprocess.herokuapp.com/signup`,
 
         {
           email: email,
@@ -26,6 +28,7 @@ const Signup = ({ handleToken }) => {
       console.log(response.data);
 
       handleToken(response.data.token);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

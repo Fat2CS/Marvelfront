@@ -3,8 +3,10 @@ import axios from "axios";
 
 // import { ReactPaginate } from "react-paginate";
 
-import { Link, useParams } from "react-router-dom";
+// import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./scss/characters.scss";
+// import Comics from "./comics";
 
 // const Per_page = 10;
 
@@ -12,37 +14,48 @@ const Characters = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
-  let page = 1;
+  // let page = 1;
   // const [page, setPage] = useState(1);
   const [skip, setSkip] = useState(0);
+  const [character, setcharacter] = useState();
   const [name, setName] = useState("");
-  const [limit] = useState(20);
+  const [text, setText] = useState("");
+  // const [limit, setLimit] = useState(20);`
+
+  const limit = 20;
+
   const [suggestions, setsuggestions] = useState([]);
 
   // const [PageSize, setPageSize] = useState(0);
-  const { _id } = useParams();
+  // const { _id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
-      );
-      // `https://marvelprocess.herokuapp.com/characters?limit=10&skip=10&name=ve`;
+      const response =
+        await axios.get // `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
+        `https://marvelprocess.herokuapp.com/characters?limit=${limit}&skip=${skip}&name=${name}`;
+
       console.log(response.data);
+      setcharacter(response.data);
+      setName(response.data);
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
   }, [skip]);
 
-  const onChangeHandler = (event) => {
-    let value = event.target.value;
-    value.lenght > 2 && setName(value);
-    // let matches = [];
-    // if (name.length > 0) {
-    //   matches = name.results.filter((com) => {
-    //     const regex = new RegExp(`${name}`, "gi");
-    // return com.setName.match(regex);
+  const onChangeHandler = (text) => {
+    let matches = [];
+    if (text.length > 0) {
+      matches = character.results.filter((com) => {
+        const regex = new RegExp(`${text}`, "gi");
+        // return comic.name.matche(regex)
+        return com.name.match(regex);
+      });
+    }
+    console.log("matches", matches);
+    setsuggestions(matches);
+    setText(text);
   };
 
   return isLoading === true ? (
@@ -54,33 +67,16 @@ const Characters = () => {
           type="text"
           name="search"
           placeholder="Search Hero ..."
-          onChange={onChangeHandler}
-          // value={name}
+          onChange={(e) => onChangeHandler(e.target.value)}
+          value={text}
         />
       </div>
-
-      <div className="search_results">
-        {/* //onrecupere la valeur et on la map sur notre liste  */}
-        {data
-          .filter((val) => {
-            return val.name.toLowerCase().includes(name.toLowerCase); // pour plus de précison on rajoute tolowercase
-          })
-          .map((val) => {
-            return (
-              <div className="search_result" key={val.id}>
-                {val.name}
-              </div>
-            );
-          })}
-      </div>
-
-      {/* </div>
       {suggestions &&
         suggestions.map((suggestion, i) => (
           <div className="text-color" key={i}>
             {suggestion.name}
           </div>
-        ))} */}
+        ))}
 
       <div className="cardp">
         {/* <h1>Retrouvez vos Héros Marvel</h1> */}

@@ -7,29 +7,67 @@ import "./scss/comics.scss";
 const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  let page = 1;
+
   // const [page, setPage] = useState(1);
   const [skip, setSkip] = useState(0);
-  const [name, setName] = useState("");
-  const [limit, setLimit] = useState(20);
+  const [comics, setComics] = useState();
+
+  const limit = 20;
+  // modification du const [limit, setlimit] = useState(20)
+  const [text, setText] = useState("");
+  const [suggestions, setsuggestions] = useState([]);
+
   // const pageOn = "Comics";
   // console.log = pageOn;
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:4001/comics?limit=${limit}&skip=${skip}`
-        // `https://marvelprocess.herokuapp.com/comics?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
+        // `http://localhost:4001/comics?limit=${limit}&skip=${skip}`
+
+        `https://marvelprocess.herokuapp.com/comics?apiKey=t7a7NjbAUHREgQNr&limit=${limit}&skip=${skip}`
       );
       console.log(response.data);
+      setComics(response.data);
       setData(response.data);
       setIsLoading(false);
     };
     fetchData();
   }, [skip]);
+
+  const onChangeHandler = (text) => {
+    let matches = [];
+    if (text.length > 0) {
+      matches = comics.results.filter((com) => {
+        const regex = new RegExp(`${text}`, "gi");
+        // return comic.name.matche(regex)
+        return com.title.match(regex);
+      });
+    }
+    console.log("matches", matches);
+    setsuggestions(matches);
+    setText(text);
+  };
+
   return isLoading === true ? (
     <div> En cours de chargement </div>
   ) : (
     <>
+      <div className="research">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search Hero ..."
+          onChange={(e) => onChangeHandler(e.target.value)}
+          value={text}
+        />
+      </div>
+      {suggestions &&
+        suggestions.map((suggestion, i) => (
+          <div className="text-color" key={i}>
+            {suggestion.title}
+          </div>
+        ))}
+
       <div className="cardp">
         {data.results.map((item, index) => {
           // console.log(offer._id);

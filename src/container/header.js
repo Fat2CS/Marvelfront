@@ -14,18 +14,6 @@ const Header = () => {
   const [text, setText] = useState("");
   const [suggestions, setsuggestions] = useState([]);
 
-  // useEffect(() => {
-  //   const loadComics = async () => {
-  //     const response = await axios.get(
-  //       `http://localhost:4001/characters`
-
-  //       // `https://marvelprocess.herokuapp.com/characters?limit=${req.query.limit}&skip=${req.query.skip}&name=${req.query.name}`
-  //     );
-  //     setComics(response.data);
-  //   };
-  //   loadComics();
-  // }, []);
-
   const onChangeHandler = (text) => {
     let matches = [];
     if (text.length > 0) {
