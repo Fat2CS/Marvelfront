@@ -31,9 +31,9 @@ const Characters = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response =
-        await axios.get // `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
-        `https://marvelprocess.herokuapp.com/characters?limit=20&skip=${skip}&name=${name}`;
+      const response = await axios.get(
+        `https://marvelprocess.herokuapp.com/characters?limit=20&skip=${skip}&name=${name}`
+      ); // `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
       console.log(response.data);
       setcharacter(response.data);
       setName(response.data);
