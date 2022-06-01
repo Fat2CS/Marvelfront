@@ -7,11 +7,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Characters from "./Pages/characters";
 import Header from "./container/header";
 import Comics from "./Pages/comics";
-import Favorites from "./Pages/favorites";
+// import Favorites from "./Pages/favorites";
 import Comicscharacters from "./Pages/comicscharacters";
 import Home from "./Pages/home";
 import Charactersid from "./Pages/charactersid";
-import { useState } from "react";
+// import { useState } from "react";
 import Signup from "./Pages/signup";
 import Login from "./Pages/login";
 
