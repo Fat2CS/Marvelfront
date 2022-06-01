@@ -12,8 +12,8 @@ const Comics = () => {
   const [skip, setSkip] = useState(0);
   const [comics, setComics] = useState();
 
-  const limit = 20;
-  // modification du const [limit, setlimit] = useState(20)
+  // const limit = 20;
+  const [limit, setlimit] = useState(20);
   const [text, setText] = useState("");
   const [suggestions, setsuggestions] = useState([]);
 
@@ -32,7 +32,7 @@ const Comics = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, [skip]);
+  }, [skip, limit]);
 
   const onChangeHandler = (text) => {
     let matches = [];

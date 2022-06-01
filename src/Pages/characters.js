@@ -20,9 +20,9 @@ const Characters = () => {
   const [character, setcharacter] = useState();
   const [name, setName] = useState("");
   const [text, setText] = useState("");
-  // const [limit, setLimit] = useState(20);`
+  const [limit, setLimit] = useState(20);
 
-  const limit = 20;
+  // const limit = 20;
 
   const [suggestions, setsuggestions] = useState([]);
 
@@ -33,8 +33,7 @@ const Characters = () => {
     const fetchData = async () => {
       const response =
         await axios.get // `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
-        `https://marvelprocess.herokuapp.com/characters?limit=${limit}&skip=${skip}&name=${name}`;
-
+        `https://marvelprocess.herokuapp.com/characters?limit=20&skip=${skip}&name=${name}`;
       console.log(response.data);
       setcharacter(response.data);
       setName(response.data);
@@ -42,7 +41,7 @@ const Characters = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, [skip]);
+  }, [skip, name]);
 
   const onChangeHandler = (text) => {
     let matches = [];
