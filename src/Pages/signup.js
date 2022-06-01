@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
+console.log("test");
 const Signup = ({ handleToken }) => {
   // const [isloading, setIsLoading] = useState(true);
   const [email, setemail] = useState("");
