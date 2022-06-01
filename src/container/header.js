@@ -1,7 +1,7 @@
 import logo from "../img/marvel.jpeg";
 
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -10,7 +10,7 @@ import "../Pages/scss/header.scss";
 import { useState } from "react";
 
 const Header = () => {
-  const [comics, setComics] = useState([]);
+  const [comics] = useState([]);
   const [text, setText] = useState("");
   const [suggestions, setsuggestions] = useState([]);
 
@@ -54,6 +54,7 @@ const Header = () => {
         </Link>
         <Link to="/comics">
           <button>Comics</button>
+          test
         </Link>
         <Link to="/comics/charactersid">
           <button>Comics&characters</button>
