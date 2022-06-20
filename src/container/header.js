@@ -3,7 +3,7 @@ import logo from "../img/marvel.jpeg";
 import { Link } from "react-router-dom";
 // import axios from "axios";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../Pages/scss/header.scss";
 // import { useState, useEffect } from "react";
@@ -29,11 +29,33 @@ const Header = () => {
   };
   return (
     <header>
+      <Link to="/login">
+        <div className="connexion">
+          <div className="buttonlog">
+            <div className="fonticon">
+              <FontAwesomeIcon
+                className="user"
+                icon="fa-solid fa-user-astronaut"
+              />
+            </div>
+
+            <button>
+              <div className="logtext"> Login</div>
+            </button>
+          </div>
+        </div>{" "}
+      </Link>
+
       <div className="logo">
         <img
           alt="logo"
           src={logo}
-          style={{ height: "530px", width: "100%", objectFit: "cover" }}
+          style={{
+            height: "430px",
+            width: "100vw",
+            objectFit: "cover",
+            alignItems: "center"
+          }}
         />
       </div>
 
@@ -54,7 +76,6 @@ const Header = () => {
         </Link>
         <Link to="/comics">
           <button>Comics</button>
-          test
         </Link>
         <Link to="/comics/charactersid">
           <button>Comics&characters</button>

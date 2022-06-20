@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
-
+import "./scss/login.scss";
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();

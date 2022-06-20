@@ -5,8 +5,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="welcome">
-      <div className="enter"> {/* <h1>ENTER</h1>{" "} */}</div>
+    <div className="header">
       <div className="Player">
         {" "}
         <iframe

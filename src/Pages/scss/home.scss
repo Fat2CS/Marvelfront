@@ -4,25 +4,55 @@
   font-family: "Koulen", cursive;
 }
 
-.welcome {
-  // font-size: 200px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // margin-top: 50px;
-  // height: 500px;
-  // font-family: "Koulen", cursive;
+// .welcome {
+// font-size: 200px;
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// margin-top: 50px;
+// height: 500px;
+// font-family: "Koulen", cursive;
+// }
+// .player {
+//   border: solid saddlebrown 2px;
+//   border-radius: 15px;
+//   margin-top: 30vw;
+//   display: flex;
+//   justify-items: center;
+//   align-items: center;
+//   margin-right: 100vw;
+// }
+// .enter {
+//   // margin-bottom: 50vw;
+//   margin-left: 100vw;
+// }
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1200px;
 }
-.player {
-  border: solid saddlebrown 2px;
-  border-radius: 15px;
-  margin-top: 30vw;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  margin-right: 100vw;
+.header video {
+  width: 100%;
 }
-.enter {
-  // margin-bottom: 50vw;
-  margin-left: 100vw;
+svg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; // needed for FF, Safari, Edge
+  height: 100%;
+}
+svg text {
+  font-family: Biko, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 38px;
+}
+svg rect {
+  fill: black;
+}
+svg > rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
 }

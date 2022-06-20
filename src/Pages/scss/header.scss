@@ -1,5 +1,6 @@
 .menu {
   margin-top: 40px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-around;
   button {
@@ -61,4 +62,43 @@
   border-bottom: dotted #982d2b;
   font-family: "Koulen", cursive;
   width: 50%;
+}
+.connexion {
+  width: 100vw;
+  background-color: white;
+  margin-top: -8px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  .user {
+    height: 30px;
+    color: #540807;
+    display: flex;
+    margin-left: 44rem;
+  }
+
+  .buttonlog {
+    font-size: larger;
+
+    margin-left: 1560px;
+    padding: 20px;
+    cursor: pointer;
+
+    margin-right: 10rem;
+  }
+  .logtext {
+    display: flex;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  .fonticon {
+    display: flex;
+  }
+  button {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
 }
