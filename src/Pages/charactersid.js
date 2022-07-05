@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { Link, useParams } from "react-router-dom";
 import "./scss/charactersid.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Charactersid = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -28,29 +29,43 @@ const Charactersid = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <div className="block">
-        <div className="cardp">
-          <div div className="grid">
-            <div key={data._id} className="card">
-              <h2>{data.name}</h2>
-
-              <img
-                className="portrait"
-                style={{
-                  height: "500px",
-                  imageresolution: "from-image 300dpi"
-                }}
-                src={`${data.thumbnail.path}/standard_large.${data.thumbnail.extension}`}
-                alt={"heros"}
-              />
-
-              <p className="description">{data.description}</p>
+      <div>
+        <div className="block1">
+          <div className="cardp">
+            <div div className="grid1">
+              <div key={data._id} className="card">
+                <h2>{data.name}</h2>
+                <div className="picture">
+                  <img
+                    className="portrait"
+                    style={{
+                      height: "400px",
+                      imageresolution: "from-image 300dpi"
+                    }}
+                    src={`${data.thumbnail.path}/standard_large.${data.thumbnail.extension}`}
+                    alt={"heros"}
+                  />
+                </div>
+              </div>
+              <div className="descriptionci1">
+                <p className="descriptionci2">{data.description}</p>
+              </div>
             </div>
-            <div className="comicslist"></div>
+
+            <div className="liencomics">
+              <Link to={`/comics/${data._id}`}>
+                <div className="butarrows">
+                  <button>Pour connaitre les comics de ton hero</button>
+                  <div className="arrowsbl">
+                    <FontAwesomeIcon
+                      className="arrows"
+                      icon="fa-solid fa-angles-right"
+                    />
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
-          <Link to={`/comics/${data._id}`}>
-            <button>Pour connaitre les comics de ton hero</button>
-          </Link>
         </div>
       </div>
     </>

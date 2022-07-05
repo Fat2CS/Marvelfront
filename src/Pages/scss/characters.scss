@@ -9,23 +9,28 @@ p {
   font-family: "Koulen", cursive;
 }
 * {
+  max-width: auto;
+  height: auto;
+}
+* {
   font-family: "Koulen", cursive;
 }
 .cardp {
   margin-top: 100px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   // border: solid blue 2px;
-  margin-right: 5%;
+  margin-left: 5%;
+  position: relative;
 }
 
 .grid {
   flex-wrap: wrap;
 }
-grid {
+.grid {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 
@@ -42,7 +47,7 @@ grid {
 
   flex-direction: row;
   height: 354px;
-  width: 220px;
+  max-width: 220px;
   // box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   // transform: matrix(1.05, 0, 0, 1.05, 0, 0);
@@ -65,23 +70,77 @@ grid {
   }
 }
 //DESCRIPTION
-.description {
-  width: 300px;
-  text-align: justify;
-  margin-top: 20px;
+.description text {
+  text-overflow: ellipsis;
+  line-clamp: 4;
+  orientation: "horizontal";
+  overflow: hidden;
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  // top: 250%;
+  left: 70%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-right: 10px;
 }
-// margin: 0px;
-//   padding: 16px 24px 17px 20px;
-//   box-sizing: border-box;
-//   -webkit-font-smoothing: antialiased;
-//   background: rgb(21, 21, 21) none repeat scroll 0% 0% / auto padding-box
-//     border-box;
-//   border: 0px none rgb(230, 36, 41);
-//   color: rgb(230, 36, 41);
-//   height: 145px;
-//   position: relative;
-//   vertical-align: middle;
-//   z-index: 30;
-//   transition: color 0.3s ease 0s;
-//   overflow: hidden;
-//   line-height: 16px;
+.pagination button {
+  margin-top: 20px;
+  border: #982d2b solid 5px;
+  height: auto;
+  width: 100px;
+  font-size: medium;
+  border-radius: 15px;
+  margin: auto;
+  padding: 1em;
+  cursor: pointer;
+}
+.pagination button:hover {
+  margin-top: 20px;
+  border: #540807 solid 4px;
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  top: 1rem;
+
+  left: 1rem;
+  right: 0rem;
+
+  height: 83%;
+  width: 287px;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(12, 6, 6, 0.842);
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.fonctionnalités .letf .btn {
+  align-self: center;
+}
+
+@media screen and (max-width: 1110px) {
+  .cardp {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 50%;
+
+    margin-left: 10rem;
+    margin-bottom: 5rem;
+
+    grid-row: 1fr;
+  }
+  .pagination {
+    margin-left: 15rem;
+  }
+}

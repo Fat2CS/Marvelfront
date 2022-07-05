@@ -1,36 +1,20 @@
 import logo from "../img/marvel.jpeg";
 
 import { Link } from "react-router-dom";
-// import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../Pages/scss/header.scss";
-// import { useState, useEffect } from "react";
+
 import { useState } from "react";
 
 const Header = () => {
-  const [comics] = useState([]);
-  const [text, setText] = useState("");
   const [suggestions, setsuggestions] = useState([]);
 
-  const onChangeHandler = (text) => {
-    let matches = [];
-    if (text.length > 0) {
-      matches = comics.results.filter((com) => {
-        const regex = new RegExp(`${text}`, "gi");
-        // return comic.name.matche(regex)
-        return com.name.match(regex);
-      });
-    }
-    console.log("matches", matches);
-    setsuggestions(matches);
-    setText(text);
-  };
   return (
     <header>
-      <Link to="/login">
-        <div className="connexion">
+      <div className="connexion">
+        <Link to="/login">
           <div className="buttonlog">
             <div className="fonticon">
               <FontAwesomeIcon
@@ -40,11 +24,21 @@ const Header = () => {
             </div>
 
             <button>
-              <div className="logtext"> Login</div>
+              <div className="logtext">login </div>
             </button>
           </div>
-        </div>{" "}
-      </Link>
+        </Link>
+
+        <div>
+          <Link to="/signup">
+            <div className="signup">
+              <FontAwesomeIcon className="sign" icon="fa-solid fa-user-pen" />
+
+              <button className="signup butt">register</button>
+            </div>
+          </Link>
+        </div>
+      </div>
 
       <div className="logo">
         <img
@@ -54,7 +48,8 @@ const Header = () => {
             height: "430px",
             width: "100vw",
             objectFit: "cover",
-            alignItems: "center"
+            alignItems: "center",
+            marginLeft: "-8px"
           }}
         />
       </div>
@@ -77,12 +72,14 @@ const Header = () => {
         <Link to="/comics">
           <button>Comics</button>
         </Link>
-        <Link to="/comics/charactersid">
-          <button>Comics&characters</button>
-        </Link>
-        <Link to="/favorites">
-          <button>Favorites</button>
-        </Link>
+        <div className="hiddenboot">
+          <Link to="/signup">
+            <button>Register</button>
+          </Link>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        </div>
       </div>
     </header>
   );

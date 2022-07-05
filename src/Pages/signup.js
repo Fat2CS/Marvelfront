@@ -37,8 +37,6 @@ const Signup = ({ handleToken }) => {
 
   return (
     <form className="signup-container" onSubmit={handlesubmit}>
-      <h1> inscris-toi </h1>
-
       <input
         type="email"
         placeholder="email"

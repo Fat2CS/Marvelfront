@@ -87,52 +87,29 @@ const Characters = () => {
                 <Link to={`/character/${item._id}`} key={item._id}>
                   <div key={index} className="card">
                     <h2>{item.name}</h2>
-
-                    <img
-                      className="portrait"
-                      style={{ height: 300 }}
-                      src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
-                      alt={"heros"}
-                    />
-
-                    <p className="description">{item.description}</p>
+                    <div className="container ">
+                      <img
+                        className="portrait"
+                        style={{ height: 300 }}
+                        src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
+                        alt={"heros"}
+                      />
+                      <div className="overlay">
+                        <p className="description">{item.description}</p>
+                      </div>
+                    </div>
                   </div>
                 </Link>
               </div>
 
-              <div>
-                {/* <table>
-                  data={data}
-                  pagination=
-                  {{
-                    total: 100,
-                    current: Page,
-                    PageSize: PageSize,
-                    OnChange: (Page, PageSize) => {
-                      setPage(Page);
-                      setPageSize(PageSize);
-                    }
-                  }}
-                </table>{" "} */}
-                {/* <div className="App">{currentPageData}</div>){currentPageData} */}
-                {/* <ReactPaginate
-                  breakLabel={"<< Previous"}
-                  nextLabel={"Next >>"}
-                  pageCount={pageCount}
-                  onPageChange={handlePageClick}
-                  containerClassName={"pagination"}
-                  previousLinkClassName={"pagination_link"}
-                  disableClassName={"pagination_link--disabled"}
-                  renderOnZeroPageCount={"pagination_link--active"}
-                /> */}
-              </div>
+              <div></div>
             </section>
             //
           );
         })}
       </div>
       {/* //pagination  */}
-      <div>
+      <div className="pagination">
         <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
 
         <button onClick={() => setSkip(skip + limit)}>Page suivante</button>

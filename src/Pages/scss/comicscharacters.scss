@@ -1,0 +1,49 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rem;
+  margin-left: 7rem;
+
+  //   justify-content: center;
+  align-content: center;
+  //   margin-right: 20rem;
+
+  .portrait {
+    display: flex;
+    // justify-items: space-between;
+  }
+  .portrait:hover {
+    // height: 00px;
+    // width: 700px;
+    border: #540807 solid 4px;
+    position: absolute;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  .portraitsolo {
+    margin-left: 15rem;
+    border-radius: 50%;
+    // height: 1000px;
+    width: 230px;
+    animation-duration: 2s;
+    animation-name: slidein;
+  }
+  .heroname {
+    margin-left: 11rem;
+    font-size: 2rem;
+  }
+  .grid {
+    margin-right: -6rem;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 60%;
+  }
+  to {
+    margin-left: 0%;
+    width: 20%;
+  }
+}

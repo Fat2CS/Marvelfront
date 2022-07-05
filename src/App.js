@@ -18,9 +18,18 @@ import Login from "./Pages/login";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faMagnifyingGlass,
-  faUserAstronaut
+  faUserAstronaut,
+  faUserXmark,
+  faUserPen,
+  faAnglesRight
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faMagnifyingGlass, faUserAstronaut);
+library.add(
+  faMagnifyingGlass,
+  faUserAstronaut,
+  faUserXmark,
+  faUserPen,
+  faAnglesRight
+);
 
 // pages
 

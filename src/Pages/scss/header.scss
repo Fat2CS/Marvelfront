@@ -3,6 +3,7 @@
   margin-bottom: 40px;
   display: flex;
   justify-content: space-around;
+
   button {
     margin-top: 20px;
     border: #982d2b solid 4px;
@@ -27,29 +28,23 @@
   }
 }
 .research {
-  // width: 100%;
-  margin-top: -10px;
+  max-width: 100%;
+  margin-top: 08rem;
+  margin-left: 27rem;
   background-color: #982d2b;
   display: block;
-  margin: auto;
+
   border: 4px solid #e8e8e8;
   border-radius: 10px;
   padding: 20px 10px;
-  width: 50%;
+  max-width: 50%;
 
   input {
-    width: 100%;
     border-radius: 10px;
-    padding: 0px;
+    width: 100%;
+    // margin: 0 5rem 0 5rem;
+    align-content: center;
   }
-}
-.iconresearch {
-  // padding-top: 20px;
-  margin-right: 50px;
-
-  position: absolute;
-  font-size: 15px;
-  margin-top: 20px;
 }
 
 .text-color {
@@ -64,13 +59,16 @@
   width: 50%;
 }
 .connexion {
-  width: 100vw;
+  max-width: 100vmax;
   background-color: white;
   margin-top: -8px;
   height: 50px;
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin-left: -8px;
+  margin-right: -7px;
+  // border: solid 2px red;
 
   .user {
     height: 30px;
@@ -82,11 +80,12 @@
   .buttonlog {
     font-size: larger;
 
-    margin-left: 1560px;
+    margin-left: 1716px;
+    // margin-right: 50px;
     padding: 20px;
     cursor: pointer;
 
-    margin-right: 10rem;
+    margin-right: 1rem;
   }
   .logtext {
     display: flex;
@@ -100,5 +99,68 @@
     border: none;
     background-color: #fff;
     cursor: pointer;
+  }
+}
+.signup button {
+  margin-top: 28px;
+
+  margin-right: 230px;
+}
+.signup {
+  .sign {
+    height: 30px;
+    color: #540807;
+    display: flex;
+    margin-left: 50rem;
+  }
+}
+.hiddenboot {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .connexion {
+    background-color: #010000;
+    display: flex;
+    position: absolute;
+    margin-right: 30rem;
+
+    width: 100vw;
+
+    .user {
+      display: none;
+    }
+  }
+  button {
+    width: 100%;
+  }
+  .buttonlog button {
+    display: none;
+  }
+
+  .signup {
+    display: none;
+
+    .sign {
+      display: none;
+    }
+  }
+
+  .signup {
+    margin-right: 80.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .research {
+    padding: 0 10rem;
+    margin: 4rem 0rem;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+  }
+  .hiddenboot {
+    display: flex;
+
+    justify-content: space-between;
   }
 }
