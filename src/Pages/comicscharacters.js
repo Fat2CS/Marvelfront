@@ -36,9 +36,6 @@ const Comicscharacters = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      {/* <div className="textblock">
-        <h1>Les Comics de tes hEros </h1>
-      </div> */}
       <main>
         <div className="grids">
           <div className="heroname">
@@ -61,7 +58,7 @@ const Comicscharacters = () => {
             console.log(item.name);
 
             return (
-              <section>
+              <section className="comicsemp">
                 <div div className="grid">
                   {/* <Link to={`/comicscharacters${item.comics._id}`} key={item._id}> */}
                   <div key={index} className="card">

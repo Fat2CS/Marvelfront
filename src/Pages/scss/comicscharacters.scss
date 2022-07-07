@@ -1,23 +1,23 @@
 main {
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 10rem;
-  margin-left: 7rem;
+  margin-top: 5rem;
+  margin-left: 2rem;
 
-  //   justify-content: center;
   align-content: center;
-  //   margin-right: 20rem;
 
-  .portrait {
+  .portraitsolo {
     display: flex;
+    border: rgb(127, 16, 16) solid 6px;
     // justify-items: space-between;
   }
+
   .portrait:hover {
-    // height: 00px;
-    // width: 700px;
     border: #540807 solid 4px;
-    position: absolute;
+    position: relative;
     margin-left: 1rem;
+    z-index: 40;
     cursor: pointer;
   }
   .portraitsolo {
@@ -31,6 +31,9 @@ main {
   .heroname {
     margin-left: 11rem;
     font-size: 2rem;
+  }
+  .comicsemp {
+    margin: 2rem 2rem;
   }
   .grid {
     margin-right: -6rem;
