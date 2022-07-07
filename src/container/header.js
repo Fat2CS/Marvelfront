@@ -41,17 +41,19 @@ const Header = () => {
       </div>
 
       <div className="logo">
-        <img
-          alt="logo"
-          src={logo}
-          style={{
-            height: "430px",
-            width: "100vw",
-            objectFit: "cover",
-            alignItems: "center",
-            marginLeft: "-8px"
-          }}
-        />
+        <Link to="/">
+          <img
+            alt="logo"
+            src={logo}
+            style={{
+              height: "300px",
+              width: "100vw",
+              objectFit: "cover",
+              alignItems: "center",
+              marginLeft: "-8px"
+            }}
+          />
+        </Link>
       </div>
 
       {suggestions &&

@@ -14,6 +14,7 @@ import Charactersid from "./Pages/charactersid";
 // import { useState } from "react";
 import Signup from "./Pages/signup";
 import Login from "./Pages/login";
+// import Layout from "./Pages/Layout";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -47,14 +48,9 @@ function App() {
       <Router>
         <Header handleToken={handleToken} />
 
-        {/* <Header token={token} setUser={setUser} /> */}
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-            // nameSearch={nameSearch}
-            // setnameSearch={setnameSearch}
-          />
+          {/* <Route path="/" element={<Layout />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters />} />
           {/* {/* <Route path="/" element={<Offer />} /> */}
           <Route path="/comics" element={<Comics />} />

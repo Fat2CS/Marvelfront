@@ -8,17 +8,14 @@ h3 {
 }
 .block1 {
   .grid1 {
-    //   border: red, solid, 4px;
     display: flex;
-    margin-left: 10rem;
-
-    //   // flex-direction: row;
+    // margin-left: 2rem;
   }
 }
 
 .descriptionci2 {
   border: solid, 2px, red;
-  width: 700px;
+  width: 500px;
   font-size: larger;
   display: flex;
   justify-content: space-between;
@@ -102,6 +99,9 @@ h3 {
   }
 }
 
+.liencomics {
+  margin-right: 3rem;
+}
 // animation button arrows
 
 .butarrows button {

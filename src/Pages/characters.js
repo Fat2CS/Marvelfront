@@ -1,33 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-// import { ReactPaginate } from "react-paginate";
-
-// import { Link, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./scss/characters.scss";
-// import Comics from "./comics";
-
-// const Per_page = 10;
 
 const Characters = () => {
   const [data, setData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
-  // let page = 1;
-  // const [page, setPage] = useState(1);
+
   const [skip, setSkip] = useState(0);
   const [character, setcharacter] = useState();
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [limit, setLimit] = useState(20);
 
-  // const limit = 20;
-
   const [suggestions, setsuggestions] = useState([]);
-
-  // const [PageSize, setPageSize] = useState(0);
-  // const { _id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

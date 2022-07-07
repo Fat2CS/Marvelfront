@@ -48,11 +48,10 @@ p {
   flex-direction: row;
   height: 354px;
   max-width: 220px;
-  // box-sizing: border-box;
+
   -webkit-font-smoothing: antialiased;
-  // transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+
   transition: all 0.2s linear 0s;
-  // overflow: hidden;
 
   display: block;
   margin-bottom: 150px;
@@ -108,7 +107,7 @@ p {
 
   left: 1rem;
   right: 0rem;
-
+  border-radius: 3px;
   height: 83%;
   width: 287px;
   opacity: 0;
@@ -126,6 +125,9 @@ p {
 
 .fonctionnalités .letf .btn {
   align-self: center;
+}
+.research {
+  margin-left: 5rem;
 }
 
 @media screen and (max-width: 1110px) {

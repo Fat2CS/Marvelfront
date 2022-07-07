@@ -55,13 +55,13 @@ const Charactersid = () => {
             <div className="liencomics">
               <Link to={`/comics/${data._id}`}>
                 <div className="butarrows">
-                  <button>Pour connaitre les comics de ton hero</button>
-                  <div className="arrowsbl">
+                  <button>Come here to know the comics of your hero</button>
+                  {/* <div className="arrowsbl">
                     <FontAwesomeIcon
                       className="arrows"
                       icon="fa-solid fa-angles-right"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </Link>
             </div>
