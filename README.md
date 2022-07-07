@@ -1,13 +1,11 @@
 
 # Marvel APP
 
-Here is my first project, it is an app with two main festures
+here is less first fullstack project during the training, it is an app with two main features
+
 search bar and authentication
 
-
-
-![Logo](http://assets.stickpng.com/images/584830f5cef1014c0b5e4aa1.png)
-![Logo](https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg)style=(height:100px)
+website responsive
 
 
 ## Demo
@@ -15,6 +13,7 @@ search bar and authentication
 Insert gif or link to demo
 
 https://marvelprocess.netlify.app
+
 ## Badges
 
 Add badges from somewhere like: [shields.io](https://shields.io/)
@@ -23,6 +22,10 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
+
+![Logo](https://www.datocms-assets.com/45470/1631110818-logo-react-js.png?fm=webp)
+
+![Logo](https://www.svgrepo.com/show/303360/nodejs-logo.svg)
 
 ## Installation
 
@@ -115,18 +118,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/c
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## logo 
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
