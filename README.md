@@ -1,4 +1,66 @@
-# Getting Started with Create React App
+
+# Marvel APP
+
+Here is my first project, it is an app with two main festures
+search bar and authentication
+
+
+
+![Logo](http://assets.stickpng.com/images/584830f5cef1014c0b5e4aa1.png)
+![Logo](https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg)style=(height:100px)
+
+
+## Demo
+
+Insert gif or link to demo
+
+https://marvelprocess.netlify.app
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+
+## Installation
+
+Install marvel with yarn 
+
+
+
+```bash
+ 
+  cd MARVEL FRONT
+```
+ Yarn start in localhost 3000
+    
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Fat2CS/Marvelfront.git
+```
+
+Go to the project directory
+
+```bash
+  cd Marvelfront
+```
+
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Start the server
+
+```bash
+  npm Yarn Start
+```# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
