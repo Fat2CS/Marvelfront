@@ -33,17 +33,20 @@
 }
 @media screen and (max-width: 1160px) {
   .cardcomics {
-    // height: 500px;
     max-width: 100%;
-    margin-top: -10rem;
+    margin-top: -07rem;
     padding-bottom: 7rem;
-    margin-left: 8rem;
+    margin-left: 6rem;
     box-sizing: border-box;
+
     .cardcomics:first-child {
       margin-top: -30rem;
     }
   }
   .research {
-    margin-top: 12rem;
+    // margin-top: 5rem;
+    margin-bottom: -22rem;
+    max-width: 30%;
+    margin-left: 0.5rem;
   }
 }

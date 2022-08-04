@@ -68,6 +68,25 @@ p {
     font-family: "Koulen", cursive;
   }
 }
+
+.research1 {
+  max-width: 100%;
+  margin-top: 8rem;
+  margin-left: 22rem;
+  background-color: #982d2b;
+  display: block;
+  border: 4px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 20px 10px;
+  max-width: 50%;
+  input {
+    border-radius: 10px;
+    width: 100%;
+    // margin: 0 5rem 0 5rem;
+    align-content: center;
+  }
+}
+
 //DESCRIPTION
 .description text {
   text-overflow: ellipsis;
@@ -75,9 +94,10 @@ p {
   orientation: "horizontal";
   overflow: hidden;
   color: white;
-  font-size: 25px;
+  // color: aqua;
+  font-size: 15px;
   position: absolute;
-  // top: 250%;
+
   left: 70%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -135,7 +155,7 @@ p {
     display: grid;
     grid-template-columns: 1fr;
 
-    width: 50%;
+    max-width: 100%;
 
     margin-left: 10rem;
     margin-bottom: 5rem;
@@ -144,5 +164,17 @@ p {
   }
   .pagination {
     margin-left: 15rem;
+  }
+
+  .research1 {
+    margin-bottom: 12rem;
+    max-width: 50%;
+    // margin-right: 7rem;
+
+    padding: 0 10rem;
+    margin: 4rem 0rem;
+    // width: 100%;
+    height: 30px;
+    align-items: center;
   }
 }

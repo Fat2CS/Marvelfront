@@ -21,7 +21,7 @@ const Characters = () => {
     const fetchData = async () => {
       const response = await axios.get(
         `https://marvelprocess.herokuapp.com/characters?limit=20&skip=${skip}&name=${name}`
-      ); // `http://localhost:4001/characters?limit=${limit}&skip=${skip}&name=${name}`
+      );
       console.log(response.data);
       setcharacter(response.data);
       setName(response.data);
@@ -49,7 +49,7 @@ const Characters = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <div className="research">
+      <div className="research1">
         <input
           type="text"
           name="search"
