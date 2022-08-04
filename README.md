@@ -1,4 +1,69 @@
-# Getting Started with Create React App
+
+# Marvel APP
+
+here is less first fullstack project during the training, it is an app with two main features
+
+search bar and authentication
+
+website responsive
+
+
+## Demo
+
+Insert gif or link to demo
+
+https://marvelprocess.netlify.app
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+
+![Logo](https://www.datocms-assets.com/45470/1631110818-logo-react-js.png?fm=webp)
+
+![Logo](https://www.svgrepo.com/show/303360/nodejs-logo.svg)
+
+## Installation
+
+Install marvel with yarn 
+
+
+
+```bash
+ 
+  cd MARVEL FRONT
+```
+ Yarn start in localhost 3000
+    
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Fat2CS/Marvelfront.git
+```
+
+Go to the project directory
+
+```bash
+  cd Marvelfront
+```
+
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Start the server
+
+```bash
+  npm Yarn Start
+```# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -53,18 +118,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/c
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## logo 
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
