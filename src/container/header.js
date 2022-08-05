@@ -14,6 +14,35 @@ const Header = () => {
   return (
     <header>
       <div className="connexion">
+        <div className="login2">
+          <div className="icon1">
+            <FontAwesomeIcon
+              className="user"
+              icon="fa-solid fa-user-astronaut"
+              fixedWidth
+            />
+          </div>
+          <div>
+            <h5>login</h5>
+          </div>
+        </div>
+
+        <div className="login3">
+          <div className="icon1">
+            <FontAwesomeIcon
+              className="user"
+              icon="fa-solid fa-user-pen"
+              fixedWidth
+            />
+          </div>
+          <div>
+            <h5>REGISTER </h5>
+          </div>
+        </div>
+      </div>
+
+      {/* </div> */}
+      {/* <div className="connexion">
         <Link to="/login">
           <div className="buttonlog">
             <div className="fonticon">
@@ -22,10 +51,11 @@ const Header = () => {
                 icon="fa-solid fa-user-astronaut"
               />
             </div>
-
-            <button>
-              <div className="logtext">login </div>
-            </button>
+            <div className="login">
+              <div className="logtext">
+                <h4>login</h4>
+              </div>
+            </div>
           </div>
         </Link>
 
@@ -33,12 +63,13 @@ const Header = () => {
           <Link to="/signup">
             <div className="signup">
               <FontAwesomeIcon className="sign" icon="fa-solid fa-user-pen" />
-
-              <button className="signup butt">register</button>
+              <div className="register">
+                <button className="signup butt">register</button>
+              </div>
             </div>
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <div className="logo">
         <Link to="/">

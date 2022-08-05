@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import "./scss/comics.scss";
+import Layout from "./Layout";
 const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -44,52 +45,54 @@ const Comics = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <div className="research">
-        <input
-          type="text"
-          name="search"
-          placeholder="Search Hero ..."
-          onChange={(e) => onChangeHandler(e.target.value)}
-          value={text}
-        />
-      </div>
-      {suggestions &&
-        suggestions.map((suggestion, i) => (
-          <div className="text-color" key={i}>
-            {suggestion.title}
-          </div>
-        ))}
+      <Layout>
+        <div className="research">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search Hero ..."
+            onChange={(e) => onChangeHandler(e.target.value)}
+            value={text}
+          />
+        </div>
+        {suggestions &&
+          suggestions.map((suggestion, i) => (
+            <div className="text-color" key={i}>
+              {suggestion.title}
+            </div>
+          ))}
 
-      <div className="cardp">
-        {data.results.map((item, index) => {
-          // console.log(offer._id);
-          return (
-            <>
-              <div className="grid"></div>
-              <div key={index} className="cardcomics">
-                <h2>{item.title}</h2>
-                <div className="container">
-                  <img
-                    className="comics"
-                    style={{ height: 300 }}
-                    src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
-                    alt={"heros"}
-                  />
-                  <div className="overlay">
-                    <p className="description">{item.description}</p>
+        <div className="cardp">
+          {data.results.map((item, index) => {
+            // console.log(offer._id);
+            return (
+              <>
+                <div className="grid"></div>
+                <div key={index} className="cardcomics">
+                  <h2>{item.title}</h2>
+                  <div className="container">
+                    <img
+                      className="comics"
+                      style={{ height: 300 }}
+                      src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
+                      alt={"heros"}
+                    />
+                    <div className="overlay">
+                      <p className="description">{item.description}</p>
+                    </div>
+                    <div className="grid"></div>
                   </div>
-                  <div className="grid"></div>
                 </div>
-              </div>
-            </>
-          );
-        })}
-      </div>
-      <div className="pagination">
-        <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
+              </>
+            );
+          })}
+        </div>
+        <div className="pagination">
+          <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
 
-        <button onClick={() => setSkip(skip + limit)}>Page suivante</button>
-      </div>
+          <button onClick={() => setSkip(skip + limit)}>Page suivante</button>
+        </div>
+      </Layout>
     </>
   );
 };

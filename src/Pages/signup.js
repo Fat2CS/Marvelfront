@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import Layout from "./Layout";
 
 console.log("test");
 const Signup = ({ handleToken }) => {
@@ -36,33 +37,37 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <form className="signup-container" onSubmit={handlesubmit}>
-      <input
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={(event) => {
-          setemail(event.target.value);
-        }}
-      />
-      <input
-        type="text"
-        placeholder="username"
-        value={username}
-        onChange={(event) => {
-          setUsername(event.target.value);
-        }}
-      />
-      <input
-        type="text"
-        placeholder="motdepasse"
-        value={password}
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
-      <input type="submit" value="sinscrire" />
-    </form>
+    <>
+      <Layout>
+        <form className="signup-container" onSubmit={handlesubmit}>
+          <input
+            type="email"
+            placeholder="email"
+            value={email}
+            onChange={(event) => {
+              setemail(event.target.value);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="username"
+            value={username}
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="motdepasse"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+          <input type="submit" value="sinscrire" />
+        </form>
+      </Layout>
+    </>
   );
 };
 

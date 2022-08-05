@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import { useState } from "react";
+import Layout from "./Layout";
 // import { useNavigate } from "react-router-dom";
 import "./scss/login.scss";
 const Login = () => {
@@ -32,26 +33,28 @@ const Login = () => {
   };
   return (
     <>
-      <form className="signup-container" onSubmit={handlesubmit}>
-        <input
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
+      <Layout>
+        <form className="signup-container" onSubmit={handlesubmit}>
+          <input
+            type="email"
+            placeholder="email"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
 
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
-        <input type="submit" value="Connexion" />
-      </form>
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+          <input type="submit" value="Connexion" />
+        </form>
+      </Layout>
     </>
   );
 };

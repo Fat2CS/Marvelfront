@@ -1,7 +1,11 @@
-// import Header from "../container/header";
-// import { Router } from "react-router-dom";
+import Header from "../container/header";
 
-// const Layout = () => {
-//   return <>{!(pathname = "/") && <Header />}</>;
-// };
-// export default Layout;
+const Layout = ({ children, handleToken }) => {
+  return (
+    <>
+      <Header handleToken={handleToken} />
+      {children}
+    </>
+  );
+};
+export default Layout;

@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { Link } from "react-router-dom";
 import "./scss/characters.scss";
+import Layout from "./Layout";
 
 const Characters = () => {
   const [data, setData] = useState([]);
@@ -49,59 +50,61 @@ const Characters = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <div className="research1">
-        <input
-          type="text"
-          name="search"
-          placeholder="Search Hero ..."
-          onChange={(e) => onChangeHandler(e.target.value)}
-          value={text}
-        />
-      </div>
-      {suggestions &&
-        suggestions.map((suggestion, i) => (
-          <div className="text-color" key={i}>
-            {suggestion.name}
-          </div>
-        ))}
+      <Layout>
+        <div className="research1">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search Hero ..."
+            onChange={(e) => onChangeHandler(e.target.value)}
+            value={text}
+          />
+        </div>
+        {suggestions &&
+          suggestions.map((suggestion, i) => (
+            <div className="text-color" key={i}>
+              {suggestion.name}
+            </div>
+          ))}
 
-      <div className="cardp">
-        {/* <h1>Retrouvez vos Héros Marvel</h1> */}
-        {data.results.map((item, index) => {
-          console.log();
-          return (
-            <section>
-              <div div className="grid">
-                <Link to={`/character/${item._id}`} key={item._id}>
-                  <div key={index} className="card">
-                    <h2>{item.name}</h2>
-                    <div className="container ">
-                      <img
-                        className="portrait"
-                        style={{ height: 300 }}
-                        src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
-                        alt={"heros"}
-                      />
-                      <div className="overlay">
-                        <p className="description">{item.description}</p>
+        <div className="cardp">
+          {/* <h1>Retrouvez vos Héros Marvel</h1> */}
+          {data.results.map((item, index) => {
+            console.log();
+            return (
+              <section>
+                <div div className="grid">
+                  <Link to={`/character/${item._id}`} key={item._id}>
+                    <div key={index} className="card">
+                      <h2>{item.name}</h2>
+                      <div className="container ">
+                        <img
+                          className="portrait"
+                          style={{ height: 300 }}
+                          src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
+                          alt={"heros"}
+                        />
+                        <div className="overlay">
+                          <p className="description">{item.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
+                  </Link>
+                </div>
 
-              <div></div>
-            </section>
-            //
-          );
-        })}
-      </div>
-      {/* //pagination  */}
-      <div className="pagination">
-        <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
+                <div></div>
+              </section>
+              //
+            );
+          })}
+        </div>
+        {/* //pagination  */}
+        <div className="pagination">
+          <button onClick={() => setSkip(skip - limit)}>Page precedente</button>
 
-        <button onClick={() => setSkip(skip + limit)}>Page suivante</button>
-      </div>
+          <button onClick={() => setSkip(skip + limit)}>Page suivante</button>
+        </div>
+      </Layout>
     </>
   );
 };

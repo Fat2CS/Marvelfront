@@ -5,6 +5,7 @@ import axios from "axios";
 
 import "./scss/characters.scss";
 import "./scss/comicscharacters.scss";
+import Layout from "./Layout";
 
 const Comicscharacters = () => {
   const { id } = useParams();
@@ -31,45 +32,47 @@ const Comicscharacters = () => {
     <div> En cours de chargement </div>
   ) : (
     <>
-      <main>
-        <div className="grids">
-          <div className="heroname">
-            <h1>{data.name}</h1>
+      <Layout>
+        <main>
+          <div className="grids">
+            <div className="heroname">
+              <h1>{data.name}</h1>
+            </div>
+            console.log(data)
+            <div className="container">
+              <img
+                className="portraitsolo"
+                style={{ height: 200 }}
+                src={data.thumbnail.path + "." + data.thumbnail.extension}
+                alt={"heros"}
+              />
+            </div>
           </div>
-          console.log(data)
-          <div className="container">
-            <img
-              className="portraitsolo"
-              style={{ height: 200 }}
-              src={data.thumbnail.path + "." + data.thumbnail.extension}
-              alt={"heros"}
-            />
-          </div>
-        </div>
 
-        <div className="cardp">
-          {data.comics.map((item, index) => {
-            console.log(item.name);
+          <div className="cardp">
+            {data.comics.map((item, index) => {
+              console.log(item.name);
 
-            return (
-              <section className="comicsemp">
-                <div div className="grid">
-                  <div key={index} className="card">
-                    <h2>{item.title}</h2>
+              return (
+                <section className="comicsemp">
+                  <div div className="grid">
+                    <div key={index} className="card">
+                      <h2>{item.title}</h2>
 
-                    <img
-                      className="portrait"
-                      style={{ height: 300 }}
-                      src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
-                      alt={"heros"}
-                    />
+                      <img
+                        className="portrait"
+                        style={{ height: 300 }}
+                        src={`${item.thumbnail.path}/standard_large.${item.thumbnail.extension}`}
+                        alt={"heros"}
+                      />
+                    </div>
                   </div>
-                </div>
-              </section>
-            );
-          })}
-        </div>
-      </main>
+                </section>
+              );
+            })}
+          </div>
+        </main>
+      </Layout>
     </>
   );
 };

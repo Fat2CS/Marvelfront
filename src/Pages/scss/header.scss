@@ -63,9 +63,9 @@
   background-color: white;
   margin-top: -8px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: row;
   margin-left: -8px;
   margin-right: -7px;
 
@@ -73,26 +73,33 @@
     height: 30px;
     color: #540807;
     display: flex;
-    margin-left: 35rem;
+    justify-content: end;
+
+    // margin-left: 3rem;
   }
 
   .buttonlog {
     font-size: larger;
+    display: flex;
+    // justify-content: end;
+    // margin-left: 1716px;
 
-    margin-left: 1716px;
-
-    padding: 20px;
+    // padding: 20px;
     cursor: pointer;
 
-    margin-right: 1rem;
+    // margin-right: 1rem;
+  }
+  .login {
+    display: flex;
   }
   .logtext {
     display: flex;
-    margin-top: 5px;
+    // margin-top: 5px;
   }
-  .fonticon {
-    display: flex;
-  }
+  // .fonticon {
+  //   display: flex;
+  //   justify-content: flex-end;
+  // }
   button {
     border: none;
     background-color: #fff;
@@ -100,20 +107,31 @@
   }
 }
 .signup button {
-  margin-top: 27px;
+  // margin-top: 27px;
 
-  margin-right: 33rem;
+  // margin-right: 33rem;
 }
 .signup {
   .sign {
     height: 30px;
     color: #540807;
-    display: flex;
-    margin-left: 40rem;
+    // display: flex;
+    // justify-content: flex-end;
+    // margin-left: 40rem;
   }
 }
 .hiddenboot {
   display: none;
+}
+
+// ESSAIE
+.login2 {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.icon1 {
+  display: flex;
 }
 @media screen and (max-width: 1024px) {
   .connexion {
